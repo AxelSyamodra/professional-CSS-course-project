@@ -218,3 +218,17 @@
     color: var(--text-brand-light);
   }
 }
+
+@layer utilities {
+  /* to help screen reader to know more information about the button/links for accessibility purposes */
+  /* similar to .sr-only */
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
