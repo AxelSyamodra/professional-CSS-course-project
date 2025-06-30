@@ -219,6 +219,35 @@
   }
 }
 
+@layer layout {
+  .wrapper {
+    /* locally scooped custom property */
+    --wrapper-max-width: 1130px;
+
+    /* or use max-width: calc(1130px + 2rem) to add the padding (two side) manually */
+    max-width: var(--wrapper-max-width);
+    /* same as margin: 0 auto */
+    margin-inline: auto;
+    padding-inline: 1rem;
+    /* from figma file the width 1130px but because added padding 1rem (16px) on each side, the width size will be change because css reset box-sizing. So turn box-sizing back to content-box to get the desired 1130px */
+    box-sizing: content-box;
+
+    /* nesting modifier */
+    &[data-width="narrow"] {
+      --wrapper-max-width: 720px;
+    }
+
+    &[data-width="wide"] {
+      --wrapper-max-width: 1330px;
+    }
+  }
+
+  /* modifier same as .wrapper--wide or .wrapper--narrow */
+  /* .wrapper[data-width="wide"] {
+
+  } */
+}
+
 @layer utilities {
   /* to help screen reader to know more information about the button/links for accessibility purposes */
   /* similar to .sr-only */
