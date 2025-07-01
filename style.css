@@ -224,6 +224,17 @@
 }
 
 @layer layout {
+  /* bring flow or spacing back after reset */
+  /* " * + * " only select element without preceding sibling / not first child   */
+  .flow > * + * {
+    margin-top: var(--flow-spacer, 1em);
+  }
+
+  .grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 1rem);
+  }
+
   .equal-columns {
     display: grid;
     /* declaring variable var(name, value) */
@@ -244,6 +255,10 @@
 
     &[data-alignment="centered"] {
       --equal-columns-vertical-alignment: center;
+    }
+
+    &[data-vertical-alignment="bottom"] {
+      --column-layout-alignment: end;
     }
   }
 
