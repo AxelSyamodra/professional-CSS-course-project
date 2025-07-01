@@ -267,6 +267,31 @@
   } */
 }
 
+@layer components {
+  /* for specific components */
+
+  .site-header {
+    padding-block: 1rem;
+  }
+
+  .site-header__inner {
+    display: flex;
+    /* to make the wrapping whitespace more even looking */
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .primary-navigation {
+    /* nesting same as .primary-navigation ul {} */
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+  }
+}
+
 @layer utilities {
   /* things that going to be used over and over again in different area */
 
