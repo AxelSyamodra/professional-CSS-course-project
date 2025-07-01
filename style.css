@@ -224,6 +224,39 @@
 }
 
 @layer layout {
+  .equal-columns {
+    display: grid;
+    /* declaring variable var(name, value) */
+    gap: var(--equal-columns-gap, 1rem);
+    align-items: var(--equal-columns-vertical-alignment, stretch);
+
+    /* breakpoint */
+    @media (width > 760px) {
+      grid-auto-flow: column;
+      /* make the columns equal size */
+      grid-auto-columns: 1fr;
+    }
+
+    /* data  attribute. Can use modifier class instead */
+    &[data-gap="large"] {
+      --equal-columns-gap: 2rem;
+    }
+
+    &[data-alignment="centered"] {
+      --equal-columns-vertical-alignment: center;
+    }
+  }
+
+  /* if using flex and make columns equal size */
+  .flex-equal-columns {
+    display: flex;
+
+    /* select all child */
+    > * {
+      flex: 1;
+    }
+  }
+
   .section {
     --padding: 3.75rem;
 
