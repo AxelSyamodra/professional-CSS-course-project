@@ -224,6 +224,8 @@
 }
 
 @layer layout {
+  /* for generic elements */
+
   /* bring flow or spacing back after reset */
   /* " * + * " only select element without preceding sibling / not first child   */
   .flow > * + * {
@@ -316,7 +318,7 @@
 }
 
 @layer components {
-  /* for specific components */
+  /* for specific elements */
 
   .site-header {
     padding-block: 1rem;
@@ -337,6 +339,31 @@
       flex-wrap: wrap;
       gap: 0.5rem 1rem;
     }
+  }
+
+  .site-footer {
+    text-align: center;
+    background-color: var(--background-dark);
+    /* padding top bottom */
+    padding-block: 2rem;
+    display: grid;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--text-brand-light);
+    }
+  }
+
+  .site-footer__title {
+    font-size: var(--font-size-md);
+    font-family: var(--ff-heading);
+    font-weight: 700;
   }
 
   .hero {
@@ -384,7 +411,7 @@
     font-family: var(--ff-heading);
     font-size: var(--font-size-md);
     font-weight: 700;
-    border-radius: var(--border-radius-2);
+    border-radius: var(--border-radius-1);
   }
 
   .button:hover,
