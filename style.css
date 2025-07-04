@@ -332,12 +332,59 @@
     justify-content: space-between;
   }
 
+  /* using aria as a selector */
+  [aria-controls="primary-nav"] {
+    /* make sure button on top layer */
+    /* able to use z-index without position because it can be use in grid and flex. this button is child flex */
+    z-index: 100;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+
+    /* reset border radius */
+    img {
+      border-radius: 0;
+    }
+  }
+
   .primary-navigation {
     /* nesting same as .primary-navigation ul {} */
     ul {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem 1rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* for mobile */
+    /* same as max-width: 760px */
+    @media (width < 760px) {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      font-family: var(--ff-heading);
+      background-color: var(--background-accent-main);
+      padding: 2rem;
+      border-radius: 0 0 0 var(--border-radius-3);
+
+      ul {
+        gap: 0;
+        flex-direction: column;
+      }
+
+      /* reverse * + *  */
+      li + li {
+        /* logical property same as margin-top: 2rem; */
+        margin-block-start: 1.5rem;
+        padding-block-start: 1.5rem;
+        border-top: 2px solid var(--background-accent-light);
+      }
     }
   }
 
