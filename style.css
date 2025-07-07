@@ -500,7 +500,8 @@
 
   .card {
     /* inherit property from .mushroom-guide */
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--card-gap, 1rem);
     padding: 1rem;
     background-color: var(--background-light);
@@ -518,6 +519,8 @@
   }
 
   .card__note {
+    /* make the note stick to the bottom */
+    margin-block-start: auto;
     background-color: var(--background-extra-light);
     padding: 0.75rem;
     border-radius: var(--border-radius-2);
