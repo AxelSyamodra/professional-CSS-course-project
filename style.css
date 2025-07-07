@@ -226,6 +226,12 @@
 @layer layout {
   /* for generic elements */
 
+  .flex-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
   /* bring flow or spacing back after reset */
   /* " * + * " only select element without preceding sibling / not first child   */
   .flow > * + * {
@@ -577,6 +583,14 @@
   .button:focus-visible {
     color: var(--text-high-contrast);
     background-color: var(--background-accent-light);
+  }
+
+  select {
+    padding: 0.5rem 1rem;
+    background-color: var(--background-accent-main);
+    border: 0;
+    border-radius: var(--border-radius-2);
+    color: var(--text-high-contrast);
   }
 }
 
