@@ -189,9 +189,21 @@
   }
 
   /* base */
+
+  /* accessibility for motion sickness */
+  @media (prefers-reduced-motion: no-preference) {
+    /* more accessible smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   html {
     font-family: var(--ff-body);
     line-height: 1.6;
+
+    /* add space or gap when jumping to section */
+    scroll-padding: 2rem;
   }
 
   body {
