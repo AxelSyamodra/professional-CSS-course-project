@@ -685,6 +685,11 @@
 @layer utilities {
   /* things that going to be used over and over again in different area */
 
+  /* convenient way to hide display: none */
+  [hidden] {
+    display: none;
+  }
+
   /* to help screen reader to know more information about the button/links for accessibility purposes */
   /* similar to .sr-only */
   .visually-hidden {
