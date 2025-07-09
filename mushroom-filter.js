@@ -49,3 +49,12 @@ function filterCards() {
     }
   });
 }
+
+// the fallback
+function enableFiltering() {
+  seasonalFilter.hidden = false;
+  edibleFilter.hidden = false;
+}
+
+// filter will on when js is accessible
+enableFiltering();
