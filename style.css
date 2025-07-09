@@ -255,12 +255,13 @@
     gap: var(--grid-flow-gap, 1rem);
   }
 
-  .grid-auto-fit {
+  /* auto-fit is the default "best" choice but if the design require can use auto-fill */
+  .grid-auto-fill {
     --grid-auto-fit-min-column-size: 250px;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(
-      auto-fit,
+      auto-fill,
       minmax(min(var(--grid-auto-fit-min-column-size), 100%), 1fr)
     );
   }
