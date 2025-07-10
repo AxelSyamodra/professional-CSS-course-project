@@ -451,6 +451,25 @@
         flex-direction: column;
       }
 
+      /* list animation */
+      li {
+        opacity: 0;
+        translate: 100%;
+
+        transition: opacity 300ms translate 875ms;
+        transition-delay: var(--delay, 125ms);
+
+        /* stagger transition */
+        /* same as li:nth-child(2) */
+        &:nth-child(2) {
+          --delay: 250ms;
+        }
+
+        &:nth-child(3) {
+          --delay: 325ms;
+        }
+      }
+
       /* reverse * + *  */
       li + li {
         /* logical property same as margin-top: 2rem; */
@@ -486,6 +505,17 @@
       @starting-style {
         opacity: 0;
         translate: 0 -100%;
+      }
+
+      li {
+        translate: 0;
+        opacity: 1;
+
+        @starting-style {
+          /* transition from this on entry */
+          translate: 100%;
+          opacity: 0;
+        }
       }
     }
   }
