@@ -10,6 +10,12 @@ const currentFilters = {
   edible: "all",
 };
 
+// setting up view transitions name to each cards
+cards.forEach((card, index) => {
+  const mushroomId = `mushroom-${index + 1}`;
+  card.style.viewTransitionName = `mushroom-card-${mushroomId}`;
+});
+
 seasonalFilter.addEventListener("change", updateFilter);
 edibleFilter.addEventListener("change", updateFilter);
 
