@@ -803,4 +803,11 @@
   .font-size-lg {
     font-size: var(--font-size-lg);
   }
+
+  /* to make element with class resizing and all it's child stop animation when screen resize */
+  .resizing * {
+    transition: none !important;
+    animation: none !important;
+    /* animation-play-state: paused; */
+  }
 }

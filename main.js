@@ -14,3 +14,17 @@ navToggle.addEventListener("click", () => {
 
   console.log(navOpen);
 });
+
+// adding resize observer for better transition between screen size
+const resizeObserver = new ResizeObserver((entries) => {
+  // adding a class called resizing to element that resize when change screen
+  document.body.classList.add("resizing");
+
+  // remove "resizing"
+  requestAnimationFrame(() => {
+    document.body.classList.remove("resizing");
+  });
+});
+
+// tell resizeObserver to watch the body
+resizeObserver.observe(document.body);
