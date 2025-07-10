@@ -377,6 +377,9 @@
 
   .site-header {
     padding-block: 1rem;
+
+    /* Better overflow-x: hidden */
+    overflow-x: clip;
   }
 
   .site-header__inner {
