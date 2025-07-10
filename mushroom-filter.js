@@ -17,7 +17,13 @@ function updateFilter(e) {
   const filterType = e.target.name;
   currentFilters[filterType] = e.target.value;
 
-  filterCards();
+  // for no browser support view transition
+  if (!document.startViewTransition()) {
+    filterCards();
+    return;
+  }
+  // with same document view transition
+  document.startViewTransition(() => filterCards());
 }
 
 function filterCards() {
