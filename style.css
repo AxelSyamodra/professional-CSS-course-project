@@ -552,6 +552,11 @@
     background-image: url(assets/hero.webp);
     background-size: cover;
     background-position: center;
+
+    /* animation when scroll out of view => fade out */
+    animation: fade-out forwards;
+    animation-timeline: view();
+    animation-range-start: exit;
   }
 
   .hero__title {
@@ -809,5 +814,15 @@
     transition: none !important;
     animation: none !important;
     /* animation-play-state: paused; */
+  }
+}
+
+/* scroll driven animation */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
